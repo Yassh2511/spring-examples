@@ -18,7 +18,13 @@ public class Example1
         // class that we will give to the object
 
         var context=new AnnotationConfigApplicationContext(ProjectConfig.class);
+        // This will initialize all the spring context and spring container
         Vehicle vehicle1=context.getBean(Vehicle.class);
+
+        /* we dont need to do any explicit casting while fetching a bean from context
+        Spring is smart enough to look for a bean of the type you reuquested in its context.
+        If such a bean doesent exist spring will throw an exception
+         */
         System.out.println("Vehicle name using spring beans is:"+vehicle1.getName());
 
         String str=context.getBean(String.class);
