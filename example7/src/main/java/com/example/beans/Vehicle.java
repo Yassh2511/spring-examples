@@ -1,5 +1,8 @@
 package com.example.beans;
 
+import org.springframework.context.annotation.Configuration;
+
+
 public class Vehicle
 {
     private String name;
