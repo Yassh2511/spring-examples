@@ -14,8 +14,11 @@ public class Person {
     private Vehicle vehicle;
 
     @Autowired
-    public Person(Vehicle v)
+    public Person(@Qualifier("vehicle1")Vehicle v)
     {
+        // here if we dont mention anyting it will find the primary type bean for vehcile
+        // nd autowired that if we dont have primary bean then it will throw error for that
+        // @Qualifier is uesd which will mention bean name so that thant only will be autowired
         this.vehicle=v;
     }
     public void setName(String name)

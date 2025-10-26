@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
 
-@Component
+
 public class Vehicle
 {
     private String name;
