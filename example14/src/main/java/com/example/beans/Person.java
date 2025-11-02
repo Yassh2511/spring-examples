@@ -10,12 +10,15 @@ public class Person {
 
     private String name = "Yash";
     private Vehicle vehicle;
+    private IdProof idProof;
 
     @Autowired
-    Person(Vehicle v) {
+    Person(Vehicle v,IdProof p) {
         System.out.println("Person bean created");
         this.vehicle = v;
+        this.idProof = p;
     }
+
 
     public String getName() {
         return name;
