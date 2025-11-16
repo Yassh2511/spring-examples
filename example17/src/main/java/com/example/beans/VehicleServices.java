@@ -21,69 +21,19 @@ public class VehicleServices
     @Autowired
     Tyres tyre;
 
+
+    // In this way using AOP out program no of lines shifts from 15 to 3 for each method
     public String playSong(boolean vehicleStarted, Song song)
     {
-        Instant start= Instant.now();
-        logger.info("Method execution started");
-        String music=null;
-        if(vehicleStarted)
-        {
-            music=speaker.makeSound(song);
-        }
-        else
-        {
-            logger.log(Level.SEVERE,"Vehicle not started to perform the operation");
-        }
-        logger.info("Method execution finished");
-        Instant end=Instant.now();
-
-        long timeElapsed= Duration.between(start,end).toMillis();
-        logger.info("Method execution tine is-"+timeElapsed);
-
-        return music;
+        return speaker.makeSound(song);
     }
 
     public String moveVehicle(boolean vehicleStarted)
     {
-        Instant start=Instant.now();
-        logger.info("Method execution started");
-        String status=null;
-        if(vehicleStarted)
-        {
-            status=tyre.rotate();
-        }
-        else
-        {
-            logger.log(Level.SEVERE,"cant move vehicle vehicle isn't started yet");
-        }
-        logger.info("Method execution is ended");
-        Instant end=Instant.now();
-
-        long timeElapsed=Duration.between(start,end).toMillis();
-        logger.info("Method execution time is:"+timeElapsed);
-
-        return status;
+        return tyre.rotate();
     }
     public String stopVehicle(boolean vehicleStarted)
     {
-        Instant start=Instant.now();
-        logger.info("Method execution started");
-        String status=null;
-        if(vehicleStarted)
-        {
-            status=tyre.stop();
-        }
-        else
-        {
-            logger.log(Level.SEVERE,"Vehicle yet not started so it cant be stopped");
-        }
-        logger.info("Method execution stopped");
-        Instant end=Instant.now();
-
-        long timeElapsed=Duration.between(start,end).toMillis();
-
-        logger.info("Time elapsed for this method:"+timeElapsed);
-
-        return status;
+        return tyre.stop();
     }
 }

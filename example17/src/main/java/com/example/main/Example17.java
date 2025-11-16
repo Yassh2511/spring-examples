@@ -21,6 +21,9 @@ public class Example17
         var vehicleServices=context.getBean(VehicleServices.class);
         boolean vehicleStarted=true;
 
+        System.out.println(vehicleServices.getClass());
+        // Here class name will not print directly vehicleServices because AOP creates a dummy or temprory
+        // object of that class and perform operation on that only
         String playingMusic=vehicleServices.playSong(vehicleStarted,song);
         String moveVehicle=vehicleServices.moveVehicle(vehicleStarted);
         String stopVehicle=vehicleServices.stopVehicle(vehicleStarted);
